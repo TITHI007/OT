@@ -1,0 +1,48 @@
+Practical 2- SCILAB Basic Commands
+
+
+//3X3 MATRIX
+A=[1 2 3; 
+   4 5 6; 
+   7 8 9]
+
+//TRANSPOSE OF A
+B=A'
+
+//ADDING 2 MATRIX
+C=A+B
+
+//SUBSTRACTING A MATRIX FROM ANOTHER
+D=B-A
+
+//MULTIPLICATION OF MATRIX
+E=A*B // MUST BE COMPATIBLE 3X3 MATRIX*3X3 MATRIX HENCE WE GET 3X3 MATRIX 
+
+//INVERSE OF A MATRIX
+F= [3 1 2;
+   1 5 3;
+   2 3 6]
+G= inv (F)
+
+//MULTIPLYING F AND ITS INVERSE WE GET IDENTITY
+H=F*G
+
+//DETERMINANT OF F
+det(F)
+
+//Matrix of log of each element of A.
+log(A)
+
+//MULTIPLYING ELEMENTS BY ELEMENTS
+A.*B
+A^2 //multiplying the same matrix to itself
+A.^2// MULTIPLYING ELEMENTS BY ELEMENTS
+A=zeros(2,5)
+B=ones(6,5)
+C=eye(4,4)
+C=10*eye(4,4)
+diag(F)
+diag(F,-1)
+//(F,-2) gives 2 as answer
+d=4
+C=eye(d,d)*d
