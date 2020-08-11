@@ -1,0 +1,122 @@
+Practical 1- Write a C and SCILAB program to find Rank of a Matrix
+
+
+SCILAB program to find Rank of a Matrix
+
+//short program on finding rank
+//author:Tithi
+a= [2 3 5;
+    34  54 54;
+    5 4 3
+   ]
+//1st matrix
+rank(a)
+//2nd matrix
+b=[1 2 3 ; 1 2 3;4 5 6]
+
+rank(b)
+
+
+
+
+
+
+
+
+In C language
+
+# include<stdio.h>
+
+int R=3,C=3;
+int i, j;
+int mat[10][10];
+
+void display( int, int);
+void input( int, int);
+int RankoMat(int , int);
+void swap(int, int, int);
+
+void swap( int row1,int row2, int col)
+{
+    for( i = 0; i < col; i++)
+    {
+        int temp = mat[row1][i];
+        mat[row1][i] = mat[row2][i];
+        mat[row2][i] = temp;
+    }
+}
+int RankoMat(int row1, int col1)
+{
+    int r, c;
+    for(r = 0; r< col1; r++)
+    {
+        
+        if( mat[r][r] )  
+        for(c = 0; c < row1; c++)
+            if(c != r)
+            {
+ 
+                float ratio = mat[c][r]/ mat[r][r];
+                for( i = 0; i < col1; i++)
+                    mat[c][i] -= ratio * mat[r][i];
+            }
+
+            else
+                printf("\n");
+       else
+        {
+            for(c =  r+1 ; c < row1;  c++)
+                if (mat[c][r])
+                {
+                    swap(r,c,col1);
+                    break ;
+                }
+
+            if(c == row1)
+            {
+                -- col1;
+
+                for(c = 0; c < row1; c ++)
+                    mat[c][r] = mat[c][col1];
+            }
+            --r;
+        }
+    }
+    display(R,C);
+    return col1;
+}
+void display( int row, int col)
+{
+    for(i = 0; i < row; i++)
+    {
+        for(j = 0; j < col; j++)
+        {
+            printf("  %d", mat[i][j]);
+        }
+        printf("\n");
+    }
+}
+void input( int row, int col)
+{
+    
+    for(i = 0 ; i< row; i++)
+    {
+        for(j = 0 ;  j<col; j++)
+        {
+            printf("Input Value for: %d: %d: ", i+1, j+1);
+            scanf("%d",  & mat[i][j]);
+            
+        }
+    }
+}
+void main()
+{
+    printf("\n Entered elements for 3X3 matrix\n");
+    input(R, C);
+    
+    printf("\n matrix is:\n");
+    display(R,C);
+    printf("\n");
+
+    printf("\n Rank of matrix is : %d",RankoMat(R, C));
+}
