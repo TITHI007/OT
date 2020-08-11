@@ -1,0 +1,10 @@
+PRACTICAL 4:write a program in scilab to implement any function with atleast one argument and one return type.
+
+//program to perform factorial
+function fact=factorial(n)
+  fact =1
+  for i=1:n
+	fact=k*fact
+  end
+end function
+factorial(6)
