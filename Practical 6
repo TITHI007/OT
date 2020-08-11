@@ -1,0 +1,21 @@
+PRACTICAL 6: Write a function to find out norms of a vector.
+
+function y = normo ( A , n )
+	if ( n == 1 ) 
+		y = sum ( abs ( A ))
+	elseif ( n == 2 )
+		y = sum ( A .^2)^(1/2);
+	elseif ( n == " NOTA " ) 
+		y = max ( abs ( A ))
+	else
+		msg = msprintf ( " %s : Invalid value %d for n . " ," mynorm " ,n )
+		error ( msg )
+	end
+endfunction
+normo ([9 9 7 4] ,1)
+
+normo ([9 9 7 4] ,2)
+
+normo ([8 7 6 7] , " NOTA " )
+
+normo ([9 9 7 4] ,32)
