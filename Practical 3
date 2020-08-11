@@ -1,0 +1,30 @@
+PRACTICAL 3: Write a program to demonstrate 2D and 3D graph.
+
+
+//SIMPLE 2-D GRAPH
+
+
+x=(-2:0.1:2);//defining range
+y=sin(x);
+plot2d(x,y)
+//USING GRAPH AND DOT OPERATOR
+//used when combination of 2 different function or more
+
+//y=sin(x).*sec(3*x);
+//plot2d(x,y)
+// to plot the curve in different style.
+plot2d(x,sin(x),style =-1)
+// multiple plots
+x=(-2:0.1:2);
+plot2d(x,sin(x))
+subplot(2,2,2)
+// multiple graphs
+x=(-2:0.1:2)';
+plot2d(x,[sin(x)  cos(x)],style=[1 -1])
+
+
+
+3-D Graphs
+
+z=(0:.01:10);
+param3d(z.*sin(5*z),z.*cos(5*z),z)
