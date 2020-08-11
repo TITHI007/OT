@@ -1,0 +1,15 @@
+PRACTICAL 5: Write a function to check whether a given matrix is singular or not.
+
+
+
+a={2 4 8 ; 
+   1 65 34 ;
+   9 3 0}
+det(a)
+
+if(round(det(a))==0) 
+  disp('SINGULAR'),//matrix having determinant 0 is singular matrix
+else 
+  disp('NOT SINGULAR'), 
+end
+
