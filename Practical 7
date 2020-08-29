@@ -1,1 +1,9 @@
-
+# 3d
+[X,Y]=meshgrid(-2:5:4);
+Z= exp((Y^2-X^2)^2+(Y^2-X^2)^2);
+surf(X,Y,Z)
+# 2d
+[X,Y]=meshgrid(4:5);
+Z= exp((Y^2-X^2)+(Y^2-X^2));
+contour(X,Y,Z,100);
+title('Level set');
