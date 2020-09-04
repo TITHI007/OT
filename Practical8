@@ -1,0 +1,32 @@
+#Norms of a Matrix (1’s , 2’s , Frobenius, Infinity)
+function[]=Prac8(A,x)
+  if(issquare(A))
+      disp('Matrix is a square matrix');
+  if(x==1)
+      ans=max(sum(abs(A)));
+      disp('1 norm of matrix is:');
+      disp(ans);
+  else if(x==2)
+      ans=max(svd(A));
+      disp('2 norm of matrix is:');
+      disp(ans);
+  else if(x=='Forbenius')
+    [r,c]=size(A)
+    for i=1:r
+       for j=1:c
+        ans=sqrt(trace(A'*A));
+       end;
+     end;
+    disp('Forbenius norm of matrix is:');
+    disp(ans);
+  else(x==Inf)
+    ans=max(sum(abs(A')));
+    disp('Infinity norm of matrix is:');
+    disp(ans);
+  end;
+  end;
+  endif
+  else
+  disp('Enter a square matrix');
+  endif
+ endfunction
